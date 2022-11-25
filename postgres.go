@@ -15,26 +15,27 @@ import (
 // before further processing.
 //
 // The literal form used for values of a specified type is:
-//   nil
-//     The SQL keyword NULL.
-//   bool
-//     Either the SQL keyword TRUE, or FALSE.
-//   int, int64
-//     The decimal value.
-//   float64
-//     If the value represents +Inf, -Inf or Nan then the literal will be
-//     'Infinity', '-Infinity' or 'Nan' respectively. Otherwise the %g
-//     encoding provided by fmt.Printf is used.
-//   string
-//     A string literal.
-//   []byte
-//     A bytea hex format literal, see
-//     https://www.postgresql.org/docs/13/datatype-binary.html#id-1.5.7.12.9.
-//   time.Time
-//     A string literal containing the RFC3339 encoding of the time stamp.
-//   Identifier
-//     A quoted identifier, see
-//     https://www.postgresql.org/docs/13/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS.
+//
+//	nil
+//	  The SQL keyword NULL.
+//	bool
+//	  Either the SQL keyword TRUE, or FALSE.
+//	int, int64
+//	  The decimal value.
+//	float64
+//	  If the value represents +Inf, -Inf or Nan then the literal will be
+//	  'Infinity', '-Infinity' or 'Nan' respectively. Otherwise the %g
+//	  encoding provided by fmt.Printf is used.
+//	string
+//	  A string literal.
+//	[]byte
+//	  A bytea hex format literal, see
+//	  https://www.postgresql.org/docs/13/datatype-binary.html#id-1.5.7.12.9.
+//	time.Time
+//	  A string literal containing the RFC3339 encoding of the time stamp.
+//	Identifier
+//	  A quoted identifier, see
+//	  https://www.postgresql.org/docs/13/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS.
 func PostgresLiteral(v interface{}) (RawSQL, error) {
 	if dv, ok := v.(driver.Valuer); ok {
 		var err error

@@ -11,7 +11,7 @@
 // where they are used. Templates in this package will always encode the
 // same value in the same way regardless of context.
 //
-// The sqlliteral function
+// # The sqlliteral function
 //
 // The sqlliteral template function must be a function of the form func(v
 // interface{}) (RawSQL, error), the default implementation is
@@ -21,13 +21,13 @@
 // database/sql/driver.Valuer along with the types documented to make up
 // the database/sql/driver.Value type. These are:
 //
-//  nil
-//  int64
-//  float64
-//  bool
-//  []byte
-//  string
-//  time.Time
+//	nil
+//	int64
+//	float64
+//	bool
+//	[]byte
+//	string
+//	time.Time
 //
 // Additional types may also be supported.
 package sqltemplate
